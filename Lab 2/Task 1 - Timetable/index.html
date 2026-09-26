@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSCS-V-A Timetable (Shift-I)</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="header-section">
+    <h1>BSCS-V-A (Shift-I)</h1>
+    <p>Air University | Weekly Academic Schedule</p>
+  </div>
+
+  <div class="timetable-wrapper">
+    <div class="timetable-grid">
+      
+      <!-- Top Grid Framework Timeline Headers -->
+      <div style="grid-column: 1; grid-row: 1; border-bottom: 2px solid var(--border-light);"></div>
+      <div class="time-slot-header" style="grid-column: 2;">08:00-09:00am <span>8:00 - 9:00</span></div>
+      <div class="time-slot-header" style="grid-column: 3;">09:00-10:00am <span>9:00 - 10:00</span></div>
+      <div class="time-slot-header" style="grid-column: 4;">10:00-11:00am <span>10:00 - 11:00</span></div>
+      <div class="time-slot-header" style="grid-column: 5;">11:00-12:00pm <span>11:00 - 12:00</span></div>
+      <div class="time-slot-header" style="grid-column: 6;">12:00-01:00pm <span>12:00 - 1:00</span></div>
+      <div class="time-slot-header" style="grid-column: 7;">01:00-02:00pm <span>1:00 - 2:00</span></div>
+      <div class="time-slot-header" style="grid-column: 8;">02:00-03:00pm <span>2:00 - 3:00</span></div>
+      <div class="time-slot-header" style="grid-column: 9;">03:00-04:00pm <span>3:00 - 4:00</span></div>
+      <div class="time-slot-header" style="grid-column: 10;">04:00-05:00pm <span>4:00 - 5:00</span></div>
+
+      <!-- Left Sidebar Row Keys -->
+      <div class="day-row-header" style="grid-row: 2;">Mo</div>
+      <div class="day-row-header" style="grid-row: 3;">Tu</div>
+      <div class="day-row-header" style="grid-row: 4;">We</div>
+      <div class="day-row-header" style="grid-row: 5;">Th</div>
+      <div class="day-row-header" style="grid-row: 6;">Fr</div>
+
+      <!-- ==================== MONDAY ==================== -->
+      <div class="cell-card c-ai" style="grid-row: 2; grid-column: 2;">
+        <div class="instructor">CS-Ms Maryam</div>
+        <div class="course-title">AI</div>
+        <div class="room-number">C-205</div>
+      </div>
+      
+      <div class="cell-card c-os" style="grid-row: 2; grid-column: 3;">
+        <div class="instructor">CS-Ms Warda<br>CS-Ms Eeman</div>
+        <div class="course-title">OS</div>
+        <div class="room-number">Lec Hall 01</div>
+      </div>
+      
+      <div class="cell-card c-daa" style="grid-row: 2; grid-column: 4;">
+        <div class="instructor">CS-Mr Junaid</div>
+        <div class="course-title">DAA</div>
+        <div class="room-number">C-202</div>
+      </div>
+      
+      <div class="cell-card c-la" style="grid-row: 2; grid-column: 5;">
+        <div class="instructor">Maths-Dr Waqas</div>
+        <div class="course-title">Linear Algebra</div>
+        <div class="room-number">C-301</div>
+      </div>
+      
+      <div class="cell-card c-mgmt" style="grid-row: 2; grid-column: 7;">
+        <div class="instructor">AUSOM-Ms Ayesha</div>
+        <div class="course-title">Intro to Mgmt</div>
+        <div class="room-number">C-303</div>
+      </div>
+
+      <!-- ==================== TUESDAY ==================== -->
+      <div class="cell-card c-ai" style="grid-row: 3; grid-column: 2 / span 3;">
+        <div class="instructor">CS-Ms Maryam Wardah</div>
+        <div class="course-title">Artificial Intelligence Lab</div>
+        <div class="room-number">Lab 5 A Block (Shift-I)</div>
+      </div>
+      
+      <div class="cell-card c-la" style="grid-row: 3; grid-column: 6;">
+        <div class="instructor">Maths-Dr Waqas</div>
+        <div class="course-title">Linear Algebra</div>
+        <div class="room-number">C-203</div>
+      </div>
+      
+      <div class="cell-card c-daa" style="grid-row: 3; grid-column: 7;">
+        <div class="instructor">CS-Mr Junaid</div>
+        <div class="course-title">DAA</div>
+        <div class="room-number">C-302</div>
+      </div>
+      
+      <div class="cell-card c-os" style="grid-row: 3; grid-column: 8;">
+        <div class="instructor">CS-Ms Warda<br>CS-Ms Eeman</div>
+        <div class="course-title">OS</div>
+        <div class="room-number">Lec Hall 01</div>
+      </div>
+
+      <!-- ==================== WEDNESDAY ==================== -->
+      <div class="cell-card c-daa" style="grid-row: 4; grid-column: 2;">
+        <div class="instructor">CS-Mr Junaid</div>
+        <div class="course-title">DAA</div>
+        <div class="room-number">C-302</div>
+      </div>
+
+      <div class="cell-card c-os" style="grid-row: 4; grid-column: 5 / span 3;">
+        <div class="instructor">CS-Ms Warda Aslam</div>
+        <div class="course-title">Operating Systems Lab</div>
+        <div class="room-number">Lab 13 C Block (3rd Floor)</div>
+      </div>
+
+      <div class="cell-card c-fs" style="grid-row: 4; grid-column: 8;">
+        <div class="instructor">CS-Mr Hafiz Obiad<br>CS-Mr Asim</div>
+        <div class="course-title">Full Stack Web</div>
+        <div class="room-number">Lec Hall 01, C-206</div>
+      </div>
+
+      <!-- ==================== THURSDAY ==================== -->
+      <div class="cell-card c-ai" style="grid-row: 5; grid-column: 3;">
+        <div class="instructor">CS-Ms Maryam</div>
+        <div class="course-title">AI</div>
+        <div class="room-number">C-202</div>
+      </div>
+
+      <div class="cell-card c-fs" style="grid-row: 5; grid-column: 5 / span 3;">
+        <div class="instructor">CS-Mr Hafiz Obiad Ullah Khan</div>
+        <div class="course-title">Full Stack Web Development Lab</div>
+        <div class="room-number">Lab 5 A Block (Shift-I)</div>
+      </div>
+
+      <div class="cell-card c-fs" style="grid-row: 5; grid-column: 8;">
+        <div class="instructor">CS-Mr Hafiz Obiad<br>CS-Mr Asim</div>
+        <div class="course-title">Full Stack Web</div>
+        <div class="room-number">Lec Hall 01, C-306</div>
+      </div>
+
+      <!-- ==================== FRIDAY ==================== -->
+      <div class="cell-card c-mgmt" style="grid-row: 6; grid-column: 4;">
+        <div class="instructor">AUSOM-Ms Ayesha</div>
+        <div class="course-title">Intro to Mgmt</div>
+        <div class="room-number">C-302</div>
+      </div>
+
+      <div class="cell-card c-la" style="grid-row: 6; grid-column: 5;">
+        <div class="instructor">Maths-Dr Waqas</div>
+        <div class="course-title">Linear Algebra</div>
+        <div class="room-number">C-301</div>
+      </div>
+
+      <div class="cell-card c-adv" style="grid-row: 6; grid-column: 6;">
+        <div class="instructor">CS-Ms Eeman</div>
+        <div class="course-title">Advisory Class</div>
+        <div class="room-number">C-202</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

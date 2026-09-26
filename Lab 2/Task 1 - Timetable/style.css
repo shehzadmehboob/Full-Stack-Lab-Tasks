@@ -1,0 +1,143 @@
+:root {
+  --bg-main: #f8fafc;
+  --card-main: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-light: #e2e8f0;
+  /* Artificial Intelligence */
+  --ai-bg: #edf2ff;
+  --ai-text: #364fc7;
+  --ai-border: #748ffc;
+  /* Operating Systems */
+  --os-bg: #e3fafc;
+  --os-text: #0b7285;
+  --os-border: #3bc9db;
+  /* Design & Analysis of Algorithms */
+  --daa-bg: #fff4e6;
+  --daa-text: #d9480f;
+  --daa-border: #ffa94d;
+  /* Linear Algebra */
+  --la-bg: #fff0f6;
+  --la-text: #c2255c;
+  --la-border: #faa2c1;
+  /* Introduction to Management */
+  --mgmt-bg: #ebfbee;
+  --mgmt-text: #2b8a3e;
+  --mgmt-border: #69db7c;
+  /* Full Stack Web Development */
+  --fs-bg: #e6fffa;
+  --fs-text: #087f5b;
+  --fs-border: #20c997;
+  /* Advisory Class */
+  --adv-bg: #f1f5f9;
+  --adv-text: #475569;
+  --adv-border: #cbd5e1;
+}
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 12px;
+}
+.header-section {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.header-section h1 {
+  font-size: 1.8rem;
+  margin: 0 0 2px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.header-section p {
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.timetable-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  background: var(--card-main);
+}
+.timetable-grid {
+  display: grid;
+  grid-template-columns: 50px repeat(9, minmax(95px, 1fr));
+  grid-template-rows: 45px repeat(5, minmax(90px, auto));
+  gap: 5px;
+  padding: 10px;
+  min-width: 940px;
+  box-sizing: border-box;
+}
+.time-slot-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--border-light);
+  text-align: center;
+  padding-bottom: 4px;
+}
+.time-slot-header span {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 1px;
+}
+.day-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  border-radius: 6px;
+}
+.cell-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  border-radius: 6px;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  word-wrap: break-word;
+}
+.cell-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.instructor {
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.course-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin: 4px 0;
+  line-height: 1.15;
+}
+.room-number {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  opacity: 0.85;
+  margin-top: auto;
+}
+.c-ai   { background: var(--ai-bg);   color: var(--ai-text);   border-color: var(--ai-border); }
+.c-os   { background: var(--os-bg);   color: var(--os-text);   border-color: var(--os-border); }
+.c-daa  { background: var(--daa-bg);  color: var(--daa-text);  border-color: va(--daa-border); }
+.c-la   { background: var(--la-bg);   color: var(--la-text);   border-color: var(--la-border); }
+.c-mgmt { background: var(--mgmt-bg); color: var(--mgmt-text); border-color: va(--mgmt-border); }
+.c-fs   { background: var(--fs-bg);   color: var(--fs-text);   border-color: var(--fs-border); }
+.c-adv  { background: var(--adv-bg);  color: var(--adv-text);  border-color: va(--adv-border); }

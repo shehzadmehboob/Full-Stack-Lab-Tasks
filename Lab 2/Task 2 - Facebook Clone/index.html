@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="#" class="logo"><i class="fa-brands fa-facebook"></i></a>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--text-secondary);"></i>
+                <input type="text" placeholder="Search Facebook">
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <a href="#" class="nav-tab active">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="#" class="nav-tab">
+                <i class="fa-solid fa-user-group"></i>
+            </a>
+            <a href="#" class="nav-tab">
+                <i class="fa-solid fa-tv"></i>
+            </a>
+            <a href="#" class="nav-tab">
+                <i class="fa-solid fa-store"></i>
+            </a>
+            <a href="#" class="nav-tab">
+                <i class="fa-solid fa-gamepad"></i>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <button class="icon-btn"><i class="fa-solid fa-bars"></i></button>
+            <button class="icon-btn"><i class="fa-brands fa-facebook-messenger"></i></button>
+            <button class="icon-btn" style="position: relative;">
+                <i class="fa-solid fa-bell"></i>
+            </button>
+            <img src="https://placehold.co/40x40/1877f2/white?text=S" alt="Profile" class="profile-pic" style="margin-left: 4px;">
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        
+        <!-- Left Sidebar -->
+        <aside class="sidebar scrollable">
+            <ul>
+                <li class="sidebar-item">
+                    <img src="https://placehold.co/36x36/1877f2/white?text=S" class="sidebar-icon">
+                    Shehzad Mehboob
+                </li>
+                <li class="sidebar-item">
+                    <div class="sidebar-icon" style="color: #1877f2;"><i class="fa-solid fa-user-friends"></i></div>
+                    Find friends
+                </li>
+                <li class="sidebar-item">
+                    <div class="sidebar-icon" style="color: #2ab3fa;"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    Memories
+                </li>
+                <li class="sidebar-item">
+                    <div class="sidebar-icon" style="color: #b968c7;"><i class="fa-solid fa-bookmark"></i></div>
+                    Saved
+                </li>
+                <li class="sidebar-item">
+                    <div class="sidebar-icon" style="color: #1877f2;"><i class="fa-solid fa-users"></i></div>
+                    Groups
+                </li>
+                <li class="sidebar-item">
+                    <div class="sidebar-icon" style="color: #2ab3fa;"><i class="fa-solid fa-video"></i></div>
+                    Video
+                </li>
+                <li class="sidebar-item">
+                    <div class="sidebar-icon" style="color: #1877f2;"><i class="fa-solid fa-store"></i></div>
+                    Marketplace
+                </li>
+                <li class="sidebar-item">
+                    <div class="sidebar-icon" style="background-color: var(--icon-bg); color: var(--text-primary);"><i class="fa-solid fa-chevron-down text-sm"></i></div>
+                    See more
+                </li>
+            </ul>
+            
+            <div class="divider"></div>
+            
+            <h3 class="sidebar-heading">Your shortcuts</h3>
+            <ul>
+                <li class="sidebar-item">
+                    <img src="https://placehold.co/36x36/8e44ad/white?text=G" class="sidebar-icon" style="border-radius: 8px;">
+                    Meow
+                </li>
+                <li class="sidebar-item">
+                    <img src="https://placehold.co/36x36/27ae60/white?text=C" class="sidebar-icon" style="border-radius: 8px;">
+                    Blah Blah
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Center Feed -->
+        <section class="feed-container scrollable">
+            
+            <!-- Create Post Card -->
+            <div class="card create-post">
+                <div class="create-post-top">
+                    <img src="https://placehold.co/40x40/1877f2/white?text=S" class="profile-pic">
+                    <div class="create-post-input">
+                        What's on your mind, Shehzad?
+                    </div>
+                </div>
+                <div class="divider" style="margin: 0;"></div>
+                <div class="create-post-actions">
+                    <button class="action-btn">
+                        <i class="fa-solid fa-video" style="color: #f3425f;"></i>
+                        Live video
+                    </button>
+                    <button class="action-btn">
+                        <i class="fa-regular fa-image" style="color: #45bd62;"></i>
+                        Photo/video
+                    </button>
+                    <button class="action-btn">
+                        <i class="fa-regular fa-face-smile" style="color: #f7b928;"></i>
+                        Feeling/activity
+                    </button>
+                </div>
+            </div>
+
+            <!-- Post 1 -->
+            <div class="card">
+                <div class="post-header">
+                    <div class="post-author-info">
+                        <img src="./cat_pfp.jpeg" class="profile-pic">
+                        <div class="post-author-details">
+                            <div class="post-author-name">Meow Meow</div>
+                            <div class="post-meta">
+                                <span>2 hrs</span>
+                                <span>·</span>
+                                <i class="fa-solid fa-earth-americas" style="font-size: 12px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="post-options"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+                
+                <div class="post-content-text">
+                    Meet my friend Batman
+                </div>
+                
+                <img src="./bat_pfp.jpeg" class="post-image" alt="Post content">
+                
+                <div class="post-stats">
+                    <div class="reactions">
+                        <div class="reaction-icon reaction-like"><i class="fa-solid fa-thumbs-up"></i></div>
+                        <div class="reaction-icon reaction-heart"><i class="fa-solid fa-heart"></i></div>
+                        <span style="margin-left: 4px;">1.2K</span>
+                    </div>
+                    <div class="comments-shares">
+                        <span>142 comments</span>
+                        <span>12 shares</span>
+                    </div>
+                </div>
+                
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                    <button class="post-action-btn"><i class="fa-regular fa-comment"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fa-solid fa-share"></i> Share</button>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="card">
+                <div class="post-header">
+                    <div class="post-author-info">
+                        <img src="./minion_pfp.jpeg" class="profile-pic">
+                        <div class="post-author-details">
+                            <div class="post-author-name">Minion Bob</div>
+                            <div class="post-meta">
+                                <span>5 hrs</span>
+                                <span>·</span>
+                                <i class="fa-solid fa-user-group" style="font-size: 12px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="post-options"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+                
+                <div class="post-content-text">
+                    Bank You!!! From King Bob
+                </div>
+                
+                <div class="post-stats">
+                    <div class="reactions">
+                        <div class="reaction-icon reaction-like"><i class="fa-solid fa-thumbs-up"></i></div>
+                        <span style="margin-left: 4px;">45</span>
+                    </div>
+                    <div class="comments-shares">
+                        <span>28 comments</span>
+                    </div>
+                </div>
+                
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                    <button class="post-action-btn"><i class="fa-regular fa-comment"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fa-solid fa-share"></i> Share</button>
+                </div>
+            </div>
+
+            
+
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar scrollable">
+            
+            <!-- Sponsored -->
+            <div style="margin-bottom: 16px;">
+                <h3 class="sidebar-heading">Sponsored</h3>
+                <div class="sponsored-item">
+                    <img src="https://placehold.co/120x120/f1c40f/white?text=</>" class="sponsored-img">
+                    <div class="sponsored-text">
+                        <h4>Learn Web Dev Fast</h4>
+                        <p>codecamp.example.com</p>
+                    </div>
+                </div>
+                <div class="sponsored-item">
+                    <img src="https://placehold.co/120x120/16a085/white?text=Shoe" class="sponsored-img">
+                    <div class="sponsored-text">
+                        <h4>Premium Sneakers</h4>
+                        <p>sneakerstore.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Contacts -->
+            <div>
+                <div class="contacts-header">
+                    <h3 class="sidebar-heading" style="margin: 0;">Contacts</h3>
+                    <div class="contacts-actions">
+                        <button class="icon-btn" style="width: 32px; height: 32px; background: transparent;"><i class="fa-solid fa-magnifying-glass" style="font-size: 14px; color: var(--text-secondary);"></i></button>
+                        <button class="icon-btn" style="width: 32px; height: 32px; background: transparent;"><i class="fa-solid fa-ellipsis" style="color: var(--text-secondary);"></i></button>
+                    </div>
+                </div>
+                
+                <ul>
+                    <li class="sidebar-item contact-item">
+                        <img src="https://placehold.co/36x36/c0392b/white?text=K" class="sidebar-icon">
+                        King Bob
+                    </li>
+                    <li class="sidebar-item contact-item">
+                        <img src="https://placehold.co/36x36/2980b9/white?text=B" class="sidebar-icon">
+                        Billi
+                    </li>
+                    <li class="sidebar-item contact-item">
+                        <img src="https://placehold.co/36x36/8e44ad/white?text=B" class="sidebar-icon">
+                        Batman
+                    </li>
+                    <li class="sidebar-item contact-item">
+                        <img src="https://placehold.co/36x36/d35400/white?text=S" class="sidebar-icon">
+                        Spooderman
+                    </li>
+                    <li class="sidebar-item contact-item">
+                        <img src="https://placehold.co/36x36/2c3e50/white?text=I" class="sidebar-icon">
+                        Idrees
+                    </li>
+                </ul>
+            </div>
+            
+        </aside>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <div class="weatherData">
+            <div class="weather-top">
+                <div class="weather-main">
+                    <img id="weatherIcon" src="https://openweathermap.org/payload/api/media/file/02d.png" alt="Weather Icon" style="display: block;">
+                    <h2 class="weather">Clouds</h2>
+                    <h2 class="city">Islamabad</h2>
+                    <h2 class="temp">37.86 °C</h2>
+                
+                    <div class="unit-switch">
+                        <button class="unit-btn active" data-unit="metric">°C</button>
+                        <button class="unit-btn" data-unit="imperial">°F</button>
+                    </div>
+                </div>
+            
+                <div class="theme-switch">
+                    <button class="theme-btn active" data-theme="light">☀</button>
+                    <button class="theme-btn" data-theme="dark">☾</button>
+                </div>
+            
+                <div class="weather-details">
+                    <div class="weather-detail">
+                        <span>Humidity</span>
+                        <strong class="humidity">20%</strong>
+                    </div>
+                
+                    <div class="weather-detail">
+                        <span>Wind Speed</span>
+                        <strong class="wind">5.66 m/s</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-section">
+                <button class="favorite-btn">★</button>
+
+                <div class="search-box">
+                    <input type="text" class="search-text" placeholder="Enter City">
+                    <button class="search-btn">Search</button>
+                </div>
+
+                <button class="location-btn">×</button>
+            </div>
+
+            <div class="search-error"></div>
+
+            <div class="favorites">
+                <h2>Favorites</h2>
+                <div class="favorite-list"><button>Islamabad</button><button>Bahawalpur</button><button>Mianwali</button></div>
+            </div>
+
+            <div class="forecast-section">
+                <h2 class="forecast-title">5-Day Forecast</h2>
+                <div class="forecast">
+                <div class="forecast-card">
+                    <h3>Sat</h3>
+                    <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds">
+                    <p>37.86 °C</p>
+                    <p>Clouds</p>
+                </div>
+            
+                <div class="forecast-card">
+                    <h3>Sun</h3>
+                    <img src="https://openweathermap.org/payload/api/media/file/03d.png" alt="scattered clouds">
+                    <p>38.19 °C</p>
+                    <p>Clouds</p>
+                </div>
+            
+                <div class="forecast-card">
+                    <h3>Mon</h3>
+                    <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds">
+                    <p>38.2 °C</p>
+                    <p>Clouds</p>
+                </div>
+            
+                <div class="forecast-card">
+                    <h3>Tue</h3>
+                    <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds">
+                    <p>34.81 °C</p>
+                    <p>Clouds</p>
+                </div>
+            
+                <div class="forecast-card">
+                    <h3>Wed</h3>
+                    <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds">
+                    <p>31.97 °C</p>
+                    <p>Clouds</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>
