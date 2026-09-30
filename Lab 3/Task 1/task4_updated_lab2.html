@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            color: white;
+            background: linear-gradient(#0005, #0008), url('./img/bg.jpg') center/cover fixed;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.light-mode {
+            color: #222;
+            background: linear-gradient(#fff5, #fff8), url('./img/bg.jpg') center/cover fixed;
+        }
+
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        body.light-mode .bg-glass {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.12);
+            color: inherit;
+            border: none;
+            backdrop-filter: blur(10px);
+            transition: background 0.2s;
+        }
+
+        .btn-glass:hover,
+        .btn-glass.active {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        body.light-mode .btn-glass {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        body.light-mode .btn-glass:hover,
+        body.light-mode .btn-glass.active {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-text {
+            background: transparent;
+            border: none;
+            color: inherit;
+            outline: none;
+        }
+
+        .search-text::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        body.light-mode .search-text::placeholder {
+            color: rgba(34, 34, 34, 0.7);
+        }
+
+        .forecast {
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .forecast::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .forecast::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        body.light-mode .forecast::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        #weatherIcon {
+            width: 75px;
+            height: 75px;
+        }
+
+        .forecast-card {
+            min-width: 110px;
+        }
+
+        @media(max-width: 500px) {
+            .forecast-card {
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+
+    <div class="container min-vh-100 d-flex flex-column py-4 px-3 px-md-5">
+        <div class="weatherData d-flex flex-column flex-grow-1 justify-content-between gap-4">
+
+            <div class="weather-top d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-4">
+
+                <div class="weather-main d-flex flex-column">
+                    <img id="weatherIcon" src="https://openweathermap.org/payload/api/media/file/02d.png"
+                        alt="Weather Icon" class="d-block">
+                    <h2 class="weather fs-4 fw-normal mb-0">Clouds</h2>
+                    <h2 class="city fs-5 mb-0">Islamabad</h2>
+                    <h2 class="temp fw-bold mb-2" style="font-size: clamp(2.5rem, 5vw, 3rem);">37.86 °C</h2>
+
+                    <div class="unit-switch d-flex gap-2 mt-1">
+                        <button class="unit-btn btn btn-glass rounded-0 px-3 py-1 active" data-unit="metric">°C</button>
+                        <button class="unit-btn btn btn-glass rounded-0 px-3 py-1" data-unit="imperial">°F</button>
+                    </div>
+                </div>
+
+                <div class="theme-switch d-flex gap-2">
+                    <button class="theme-btn btn btn-glass rounded-0 px-3 py-1 active" data-theme="light">☀</button>
+                    <button class="theme-btn btn btn-glass rounded-0 px-3 py-1" data-theme="dark">☾</button>
+                </div>
+
+                <div class="weather-details d-flex flex-row flex-md-column gap-2 w-100" style="max-width: 250px;">
+                    <div class="weather-detail bg-glass d-flex flex-column px-3 py-2 flex-grow-1">
+                        <span class="opacity-75" style="font-size: 0.8rem;">Humidity</span>
+                        <strong class="humidity fs-5">20%</strong>
+                    </div>
+                    <div class="weather-detail bg-glass d-flex flex-column px-3 py-2 flex-grow-1">
+                        <span class="opacity-75" style="font-size: 0.8rem;">Wind Speed</span>
+                        <strong class="wind fs-5">5.66 m/s</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-section d-flex align-items-stretch gap-2 mx-auto w-100 mt-md-3"
+                style="max-width: 650px;">
+                <button class="favorite-btn btn btn-glass rounded-0 d-flex align-items-center justify-content-center"
+                    style="width: 45px;"><i class="fs-5">★</i></button>
+
+                <div class="search-box bg-glass d-flex flex-grow-1">
+                    <input type="text" class="search-text flex-grow-1 px-3 py-2 w-100" placeholder="Enter City">
+                    <button class="search-btn btn btn-glass rounded-0 px-3 px-md-4">Search</button>
+                </div>
+
+                <button class="location-btn btn btn-glass rounded-0 d-flex align-items-center justify-content-center"
+                    style="width: 45px;"><i class="fs-4">&times;</i></button>
+            </div>
+
+            <div class="search-error text-center text-danger small" style="min-height: 1.2rem; margin-top: -0.5rem;">
+            </div>
+
+            <div class="favorites d-flex flex-column align-items-center gap-2">
+                <h2 class="fs-6 fw-normal opacity-75 mb-0">Favorites</h2>
+                <div class="favorite-list d-flex flex-wrap justify-content-center gap-2">
+                    <button class="btn btn-glass rounded-0 py-1 px-3 small">Islamabad</button>
+                    <button class="btn btn-glass rounded-0 py-1 px-3 small">Bahawalpur</button>
+                    <button class="btn btn-glass rounded-0 py-1 px-3 small">Mianwali</button>
+                </div>
+            </div>
+
+            <div class="forecast-section d-flex flex-column gap-2 mt-auto">
+                <h2 class="forecast-title fs-6 fw-normal opacity-75 mb-0">5-Day Forecast</h2>
+                <div class="forecast d-flex gap-2">
+
+                    <div class="forecast-card bg-glass d-flex flex-column align-items-center flex-grow-1 p-2">
+                        <h3 class="fw-medium mb-1" style="font-size: 0.8rem;">Sat</h3>
+                        <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds" width="45"
+                            height="45">
+                        <p class="fw-semibold mb-0">37.86 °C</p>
+                        <p class="small mb-0" style="font-size: 0.8rem;">Clouds</p>
+                    </div>
+
+                    <div class="forecast-card bg-glass d-flex flex-column align-items-center flex-grow-1 p-2">
+                        <h3 class="fw-medium mb-1" style="font-size: 0.8rem;">Sun</h3>
+                        <img src="https://openweathermap.org/payload/api/media/file/03d.png" alt="scattered clouds"
+                            width="45" height="45">
+                        <p class="fw-semibold mb-0">38.19 °C</p>
+                        <p class="small mb-0" style="font-size: 0.8rem;">Clouds</p>
+                    </div>
+
+                    <div class="forecast-card bg-glass d-flex flex-column align-items-center flex-grow-1 p-2">
+                        <h3 class="fw-medium mb-1" style="font-size: 0.8rem;">Mon</h3>
+                        <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds" width="45"
+                            height="45">
+                        <p class="fw-semibold mb-0">38.2 °C</p>
+                        <p class="small mb-0" style="font-size: 0.8rem;">Clouds</p>
+                    </div>
+
+                    <div class="forecast-card bg-glass d-flex flex-column align-items-center flex-grow-1 p-2">
+                        <h3 class="fw-medium mb-1" style="font-size: 0.8rem;">Tue</h3>
+                        <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds" width="45"
+                            height="45">
+                        <p class="fw-semibold mb-0">34.81 °C</p>
+                        <p class="small mb-0" style="font-size: 0.8rem;">Clouds</p>
+                    </div>
+
+                    <div class="forecast-card bg-glass d-flex flex-column align-items-center flex-grow-1 p-2">
+                        <h3 class="fw-medium mb-1" style="font-size: 0.8rem;">Wed</h3>
+                        <img src="https://openweathermap.org/payload/api/media/file/02d.png" alt="few clouds" width="45"
+                            height="45">
+                        <p class="fw-semibold mb-0">31.97 °C</p>
+                        <p class="small mb-0" style="font-size: 0.8rem;">Clouds</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shehzad Mehboob — Portfolio</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f6f8f9;
+      --card: #ffffff;
+      --pink: #e5d6ce;
+      --pink-dp: #8fa8bc;
+      --lavender: #d2dce4;
+      --mint: #e7ebee;
+      --peach: #dec3b3;
+      --ink: #3c4650;
+      --ink-soft: #78838d;
+      --line: #e1e6ea;
+      --font-display: "Fraunces", serif;
+      --font-body: "Plus Jakarta Sans", sans-serif;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-display {
+      font-family: var(--font-display);
+    }
+
+    .text-ink {
+      color: var(--ink);
+    }
+
+    .text-ink-soft {
+      color: var(--ink-soft);
+    }
+
+    .text-pink-dp {
+      color: var(--pink-dp);
+    }
+
+    .border-line {
+      border-color: var(--line) !important;
+    }
+
+    .bg-card {
+      background-color: var(--card);
+    }
+
+    .bg-mint {
+      background-color: var(--mint);
+    }
+
+    .bg-lavender {
+      background-color: var(--lavender);
+    }
+
+    .container-custom {
+      max-width: 1180px;
+    }
+
+    .nav-blur {
+      background: rgba(231, 235, 238, 0.85);
+      /* var(--mint) with opacity */
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-link-custom {
+      color: var(--ink-soft);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link-custom:hover {
+      color: var(--ink);
+    }
+
+    .hero-anim {
+      animation: rise 0.8s ease forwards;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-custom {
+      border-radius: 999px;
+      font-weight: 600;
+      padding: 12px 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s, color 0.2s;
+    }
+
+    .btn-solid {
+      background-color: var(--ink);
+      color: var(--cream);
+      border: 1.5px solid var(--ink);
+    }
+
+    .btn-solid:hover {
+      background-color: var(--ink);
+      color: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -10px rgba(63, 59, 82, 0.5);
+    }
+
+    .btn-ghost {
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--ink);
+      color: var(--cream);
+    }
+
+    .meta-link {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+
+    .meta-link:hover {
+      color: var(--pink-dp);
+    }
+
+    .chip {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: #4d5c68;
+    }
+
+    .chip.pink {
+      background: var(--pink);
+      color: #7a5a42;
+    }
+
+    .chip.lav {
+      background: var(--lavender);
+      color: #3d5568;
+    }
+
+    .chip.peach {
+      background: var(--peach);
+      color: #6b3f22;
+    }
+
+    .project-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -20px rgba(63, 59, 82, 0.35);
+    }
+
+    .project-link {
+      color: var(--pink-dp);
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .timeline-dot {
+      flex: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pink-dp);
+      margin-top: 6px;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, var(--lavender), var(--mint));
+    }
+
+    section {
+      scroll-margin-top: 100px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--pink-dp);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-anim {
+        animation: none;
+        opacity: 1;
+      }
+
+      .project-card,
+      .btn-custom {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar sticky-top border-bottom border-line nav-blur py-3">
+    <div class="container container-custom d-flex justify-content-between align-items-center">
+      <a href="#" class="navbar-brand font-display fw-semibold fs-5 text-ink m-0">shehzad<span
+          class="text-pink-dp">.</span>mehboob</a>
+      <ul class="nav d-none d-md-flex gap-4">
+        <li class="nav-item"><a class="nav-link nav-link-custom p-0" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom p-0" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom p-0" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom p-0" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="container container-custom py-5 mt-md-4 hero-anim">
+    <div class="py-4" style="max-width: 720px;">
+      <p class="text-ink-soft fw-medium mb-2 small">Third-year Computer Science student</p>
+      <h1 class="font-display fw-medium text-ink mb-4" style="font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1;">
+        Hi, I'm Shehzad — I build <em class="text-pink-dp" style="font-style: italic;">applications & systems</em>.
+      </h1>
+      <p class="text-ink-soft fs-5 mb-4" style="max-width: 58ch;">
+        I have hands-on experience across C++, HTML, CSS, JavaScript, and frameworks such as Blazor and Flutter. I am a
+        curious, quick learner with a problem-solving mindset, focused on understanding systems end-to-end and keeping
+        pace with emerging technologies, particularly AI.
+      </p>
+      <div class="d-flex flex-wrap gap-3 mt-2">
+        <a class="btn btn-custom btn-solid" href="#projects">See my projects</a>
+        <a class="btn btn-custom btn-ghost" href="mailto:shehzadmehboob77@gmail.com">Say hello</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container container-custom pb-5 mb-5">
+    <div class="row g-5">
+
+      <aside class="col-lg-4 col-xl-3">
+        <div class="sticky-top d-flex flex-column gap-4" style="top: 96px;">
+
+          <div class="card border border-line bg-card rounded-4 p-4 shadow-sm border-0">
+            <img src="./img/pfp.jpeg" alt="Shehzad Mehboob"
+              class="rounded-circle border border-line bg-lavender object-fit-cover mb-3" width="96" height="96">
+            <h2 class="font-display fw-medium text-ink h5 mb-1">Shehzad Mehboob</h2>
+            <p class="text-ink-soft mb-3">Software Developer</p>
+            <div class="d-flex flex-column gap-2 text-ink-soft small border-top border-line pt-3">
+              <a href="mailto:shehzadmehboob77@gmail.com" class="meta-link">shehzadmehboob77@gmail.com</a>
+              <a href="https://github.com/shehzadmehboob" target="_blank" rel="noopener"
+                class="meta-link">github.com/shehzadmehboob</a>
+              <a href="https://linkedin.com/in/shehzadmehboob" target="_blank" rel="noopener"
+                class="meta-link">linkedin.com/in/shehzadmehboob</a>
+              <span>+923026622275</span>
+            </div>
+          </div>
+
+          <div class="card border border-line bg-card rounded-4 p-4 shadow-sm border-0">
+            <h3 class="font-display fw-medium h6 mb-3">Skills</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="chip">C++</span>
+              <span class="chip pink">C# (.NET)</span>
+              <span class="chip lav">JavaScript</span>
+              <span class="chip peach">Dart</span>
+              <span class="chip">SQL</span>
+              <span class="chip pink">Blazor</span>
+              <span class="chip lav">Flutter</span>
+              <span class="chip peach">Node.js</span>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <main class="col-lg-8 col-xl-9">
+
+        <section id="about" class="mb-5">
+          <h2 class="font-display fw-medium h3 mb-3">About</h2>
+          <p class="text-ink-soft" style="max-width: 68ch;">
+            I am motivated to contribute to meaningful projects and continuously improve my development toolkit. Beyond
+            coding, my hobbies include working out at the gym and tackling complex problem-solving scenarios.
+          </p>
+        </section>
+
+        <section id="projects" class="mb-5 pb-3">
+          <div class="d-flex justify-content-between align-items-baseline mb-4">
+            <h2 class="font-display fw-medium h3 m-0">Projects</h2>
+            <span class="text-ink-soft small">3 shown</span>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+
+            <div class="col">
+              <div class="card h-100 bg-card border border-line rounded-4 overflow-hidden project-card border-0">
+                <img src="./img/spokn.png" alt="Spokn"
+                  class="card-img-top bg-lavender object-fit-cover border-bottom border-line" style="height: 150px;">
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h6 fw-bold mb-2">Spokn</h3>
+                  <p class="text-ink-soft small mb-3 flex-grow-1">Built an AI-powered simulation platform that trains
+                    soft skills such as decision-making and communication, with feedback based on psychological metrics
+                    and full voice support. Designed core modes including "Say It", "Decide", and a multiplayer
+                    "Pressure Room".</p>
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Blazor
+                      Server</span>
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Gemini
+                      2.5 API</span>
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">SignalR</span>
+                  </div>
+                  <a href="https://github.com/shehzadmehboob/Arena" class="project-link fw-semibold small">Code</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 bg-card border border-line rounded-4 overflow-hidden project-card border-0">
+                <img src="./img/dafkay.png" alt="DAFKAY"
+                  class="card-img-top bg-lavender object-fit-cover border-bottom border-line" style="height: 150px;">
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h6 fw-bold mb-2">DAFKAY</h3>
+                  <p class="text-ink-soft small mb-3 flex-grow-1">Developed a mobile app that digitizes coworking space
+                    management, letting users explore locations, check real-time availability, and book desks. Backed by
+                    an AI assistant for a concierge-style experience using Google Generative AI SDK.</p>
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Flutter</span>
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Firebase
+                      Auth</span>
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Firestore</span>
+                  </div>
+                  <a href="#" class="project-link fw-semibold small">Code</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 bg-card border border-line rounded-4 overflow-hidden project-card border-0">
+                <img src="./img/loop.png" alt="The LOOP"
+                  class="card-img-top bg-lavender object-fit-cover border-bottom border-line" style="height: 150px;">
+                <div class="card-body p-4 d-flex flex-column">
+                  <h3 class="h6 fw-bold mb-2">The LOOP</h3>
+                  <p class="text-ink-soft small mb-3 flex-grow-1">Built a Python-based GUI that centralizes network
+                    reconnaissance, host-based integrity monitoring, web security analysis, and cryptography into one
+                    interface. Implemented asymmetric and symmetric cryptography from first principles.</p>
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Python</span>
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Cryptography</span>
+                    <span
+                      class="badge rounded-pill bg-cream text-ink-soft border border-line fw-semibold px-2 py-1">Security</span>
+                  </div>
+                  <a href="#" class="project-link fw-semibold small">Code</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="experience" class="mb-5 pb-3">
+          <h2 class="font-display fw-medium h3 mb-4">Experience &amp; Education</h2>
+          <div class="d-flex flex-column gap-3">
+
+            <div class="card bg-card border border-line rounded-4 p-4 border-0 d-flex flex-row gap-3">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3 class="h6 fw-bold mb-1">Full-Stack Web Development Intern</h3>
+                <div class="text-ink-soft small mb-2">Tricentric Labs &middot; July 2026 &ndash; August 2026</div>
+                <p class="text-ink-soft small m-0">Worked across the full stack building web applications with Node.js,
+                  Express, and SQL, contributing to server-side logic and API development. Built authentication systems
+                  using JWT and session-based authentication.</p>
+              </div>
+            </div>
+
+            <div class="card bg-card border border-line rounded-4 p-4 border-0 d-flex flex-row gap-3">
+              <div class="timeline-dot"></div>
+              <div>
+                <h3 class="h6 fw-bold mb-1">Air University, Islamabad</h3>
+                <div class="text-ink-soft small mb-2">Bachelor of Science, Computer Science &middot; 2024 - 2028</div>
+                <p class="text-ink-soft small m-0">Relevant Coursework: Data Structures &amp; Algorithms, Database
+                  Systems, OOP, Visual Programming, Software Engineering, Information Security.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="contact">
+          <div
+            class="contact-card p-4 p-md-5 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4 shadow-sm border border-line">
+            <div>
+              <h2 class="font-display fw-medium mb-2 text-ink h2">Let's work together</h2>
+              <p class="m-0" style="color: #46545f;">Open to internships, freelance work, and interesting
+                collaborations.</p>
+            </div>
+            <a class="btn btn-custom btn-solid flex-shrink-0" href="mailto:shehzadmehboob77@gmail.com">Email me</a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 mb-3 text-ink-soft small">
+    &copy; 2026 Shehzad Mehboob. Built with Bootstrap 5.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
